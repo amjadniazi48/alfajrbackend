@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "short_courses",
+  "info": {
+    "singularName": "short-course",
+    "pluralName": "short-courses",
+    "displayName": "Short Course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "rank": {
+      "type": "integer"
+    }
+  }
+}
