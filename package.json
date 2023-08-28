@@ -19,6 +19,7 @@
     "@strapi/plugin-users-permissions": "4.12.7",
     "@strapi/provider-upload-cloudinary": "^4.12.7",
     "@strapi/strapi": "4.12.7",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "pg": "8.6.0",
     "strapi-plugin-navigation": "^2.2.4"
   },
