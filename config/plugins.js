@@ -7,10 +7,6 @@ module.exports = ({ env }) => ({
         api_key: env("CLOUDINARY_KEY"),
         api_secret: env("CLOUDINARY_SECRET"),
       },
-
-      "drag-drop-content-types": {
-        enabled: true,
-      },
       actionOptions: {
         upload: {},
         delete: {},
