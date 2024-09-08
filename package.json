@@ -13,7 +13,6 @@
   "dependencies": {
     "@ckeditor/ckeditor5-source-editing": "^37.1.0",
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
-    "@strapi/plugin-color-picker": "^4.25.10",
     "@strapi/plugin-i18n": "4.25.10",
     "@strapi/plugin-users-permissions": "4.25.10",
     "@strapi/provider-upload-cloudinary": "^4.25.10",
