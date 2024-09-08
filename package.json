@@ -13,6 +13,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-source-editing": "^37.1.0",
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
+  
     "@strapi/plugin-i18n": "4.25.10",
     "@strapi/plugin-users-permissions": "4.25.10",
     "@strapi/provider-upload-cloudinary": "^4.25.10",
@@ -33,7 +34,7 @@
     "uuid": "03a3558e-9a10-44af-aaf8-972e694ab76f"
   },
   "engines": {
-    "node": ">=16.0.0 <=18.x.x",
+    "node": ">=18.19.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
