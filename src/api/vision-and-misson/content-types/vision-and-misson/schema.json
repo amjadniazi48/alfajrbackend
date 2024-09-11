@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "vision_and_missons",
+  "info": {
+    "singularName": "vision-and-misson",
+    "pluralName": "vision-and-missons",
+    "displayName": "Vision and Misson",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

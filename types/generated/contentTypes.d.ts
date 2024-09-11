@@ -1047,9 +1047,6 @@ export interface ApiAcademicProgramAcademicProgram
     slug: Attribute.UID<'api::academic-program.academic-program', 'title'>;
     faqs: Attribute.Component<'shared.faq', true>;
     downloads: Attribute.Media<'files' | 'images', true>;
-    BackgroundColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    rank: Attribute.Integer;
     description: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor.CKEditor',
@@ -1251,7 +1248,6 @@ export interface ApiShortCourseShortCourse extends Schema.CollectionType {
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Attribute.String;
     slug: Attribute.UID<'api::short-course.short-course', 'title'>;
-    rank: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1396,6 +1392,39 @@ export interface ApiVideoVideo extends Schema.CollectionType {
   };
 }
 
+export interface ApiVisionAndMissonVisionAndMisson extends Schema.SingleType {
+  collectionName: 'vision_and_missons';
+  info: {
+    singularName: 'vision-and-misson';
+    pluralName: 'vision-and-missons';
+    displayName: 'Vision and Misson';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.UID<'api::vision-and-misson.vision-and-misson', 'title'>;
+    description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::vision-and-misson.vision-and-misson',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::vision-and-misson.vision-and-misson',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1430,6 +1459,7 @@ declare module '@strapi/types' {
       'api::team.team': ApiTeamTeam;
       'api::upcoming.upcoming': ApiUpcomingUpcoming;
       'api::video.video': ApiVideoVideo;
+      'api::vision-and-misson.vision-and-misson': ApiVisionAndMissonVisionAndMisson;
     }
   }
 }
