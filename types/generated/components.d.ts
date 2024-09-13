@@ -63,7 +63,6 @@ export interface LayoutHero extends Schema.Component {
     title: Attribute.String;
     description: Attribute.RichText;
     image: Attribute.Media<'images' | 'files' | 'videos', true>;
-    sociallink: Attribute.Component<'shared.link', true>;
   };
 }
 

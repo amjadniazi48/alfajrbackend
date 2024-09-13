@@ -1170,6 +1170,36 @@ export interface ApiMediaClipingMediaCliping extends Schema.CollectionType {
   };
 }
 
+export interface ApiMessageMessage extends Schema.SingleType {
+  collectionName: 'messages';
+  info: {
+    singularName: 'message';
+    pluralName: 'messages';
+    displayName: 'Message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Messages: Attribute.Component<'layout.hero', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::message.message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::message.message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNotificationNotification extends Schema.CollectionType {
   collectionName: 'notifications';
   info: {
@@ -1452,6 +1482,7 @@ declare module '@strapi/types' {
       'api::download.download': ApiDownloadDownload;
       'api::job.job': ApiJobJob;
       'api::media-cliping.media-cliping': ApiMediaClipingMediaCliping;
+      'api::message.message': ApiMessageMessage;
       'api::notification.notification': ApiNotificationNotification;
       'api::post.post': ApiPostPost;
       'api::short-course.short-course': ApiShortCourseShortCourse;

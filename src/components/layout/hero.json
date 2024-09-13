@@ -22,11 +22,6 @@
         "files",
         "videos"
       ]
-    },
-    "sociallink": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.link"
     }
   }
 }

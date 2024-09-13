@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "messages",
+  "info": {
+    "singularName": "message",
+    "pluralName": "messages",
+    "displayName": "Message"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Messages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.hero"
+    }
+  }
+}
