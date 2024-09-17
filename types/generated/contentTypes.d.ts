@@ -1455,6 +1455,36 @@ export interface ApiVisionAndMissonVisionAndMisson extends Schema.SingleType {
   };
 }
 
+export interface ApiVitalLinkVitalLink extends Schema.SingleType {
+  collectionName: 'vital_links';
+  info: {
+    singularName: 'vital-link';
+    pluralName: 'vital-links';
+    displayName: 'Vital Link';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Links: Attribute.Component<'shared.link', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::vital-link.vital-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::vital-link.vital-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1491,6 +1521,7 @@ declare module '@strapi/types' {
       'api::upcoming.upcoming': ApiUpcomingUpcoming;
       'api::video.video': ApiVideoVideo;
       'api::vision-and-misson.vision-and-misson': ApiVisionAndMissonVisionAndMisson;
+      'api::vital-link.vital-link': ApiVitalLinkVitalLink;
     }
   }
 }
